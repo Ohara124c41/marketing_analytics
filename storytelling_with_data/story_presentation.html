@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>When Do Gift Shoppers Buy?</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #009999 0%, #006666 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .slide {
+            background: white;
+            min-height: 675px;
+            margin: 40px auto;
+            padding: 50px;
+            max-width: 960px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            page-break-after: always;
+        }
+
+        .slide-header {
+            border-bottom: 4px solid #009999;
+            padding-bottom: 15px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #009999;
+            font-size: 42px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #009999;
+            font-size: 32px;
+            margin-bottom: 25px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 20px;
+            font-weight: 300;
+        }
+
+        .story-text {
+            font-size: 22px;
+            line-height: 1.8;
+            color: #333;
+            margin: 30px 0;
+            font-weight: 400;
+        }
+
+        .story-text strong {
+            color: #009999;
+            font-weight: 700;
+        }
+
+        .visual-container {
+            margin: 35px 0;
+            text-align: center;
+        }
+
+        .visual-container img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .title-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 600px;
+        }
+
+        .title-slide h1 {
+            font-size: 52px;
+            margin-bottom: 25px;
+        }
+
+        .title-slide .subtitle {
+            font-size: 24px;
+            margin-bottom: 40px;
+        }
+
+        .stat-highlight {
+            background: linear-gradient(135deg, #009999 0%, #006666 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .cta {
+            background: #663399;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-top: 30px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .cta-title {
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title -->
+    <div class="slide">
+        <div class="title-slide">
+            <h1>When Do Gift Shoppers Buy?</h1>
+            <p class="subtitle">Insights from UK Online Gift Retailer Data</p>
+            <p class="subtitle" style="font-size: 18px; color: #999; margin-top: 20px;">
+                Udacity Marketing Analytics Project<br>
+                By: Christopher O'Hara, PhD, EngD
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 2: Question -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>The Question</h2>
+        </div>
+        <div class="story-text" style="font-size: 28px; text-align: center; margin-top: 100px;">
+            When do customers buy gifts throughout the year?
+        </div>
+    </div>
+
+    <!-- Slide 3: Visual 1 - November -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>When Do Gift Shoppers Buy?</h2>
+        </div>
+        <div class="story-text">
+            If you're planning your inventory, <strong>November</strong> is your biggest month!
+        </div>
+        <div class="visual-container">
+            <img src="story_visual_1.png" alt="November sales peak">
+        </div>
+    </div>
+
+    <!-- Slide 4: Visual 2 - September -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>When Do Gift Shoppers Buy?</h2>
+        </div>
+        <div class="story-text">
+            <strong>September</strong> is your second busiest month as customers prepare for fall holidays.
+        </div>
+        <div class="visual-container">
+            <img src="story_visual_2.png" alt="September sales">
+        </div>
+    </div>
+
+    <!-- Slide 5: Visual 3 - October -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>When Do Gift Shoppers Buy?</h2>
+        </div>
+        <div class="story-text">
+            <strong>October</strong> rounds out the top three as holiday shopping begins.
+        </div>
+        <div class="visual-container">
+            <img src="story_visual_3.png" alt="October sales">
+        </div>
+    </div>
+
+    <!-- Slide 6: Key Insight -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>The Key Insight</h2>
+        </div>
+        <div class="stat-highlight">
+            <strong>33% of your annual sales happen in just three months:</strong>
+            September, October, and November.
+        </div>
+        <div class="story-text" style="margin-top: 50px;">
+            Gift shoppers prepare early for the holiday season, creating a fall sales surge.
+        </div>
+    </div>
+
+    <!-- Slide 7: Call to Action -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>Recommended Actions</h2>
+        </div>
+        <div class="cta">
+            <div class="cta-title">Stock Up for Fall!</div>
+            Increase inventory levels in August to meet September-November demand.
+        </div>
+        <div class="cta" style="background: #009999; margin-top: 25px;">
+            <div class="cta-title">Plan Marketing Campaigns</div>
+            Launch promotional campaigns in late summer to capture early holiday shoppers.
+        </div>
+        <div class="cta" style="background: #663399; margin-top: 25px;">
+            <div class="cta-title">Hire Seasonal Staff</div>
+            Bring on extra team members by late August to handle the fall rush.
+        </div>
+    </div>
+
+</body>
+</html>
