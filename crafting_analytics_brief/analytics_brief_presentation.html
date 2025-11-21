@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Brief - Boston Dynamics Spot Enterprise</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #00BCD4 0%, #006D7A 100%);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .slide {
+            background: white;
+            min-height: 675px;
+            margin: 40px auto;
+            padding: 50px 60px;
+            max-width: 960px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            page-break-after: always;
+        }
+
+        .slide-header {
+            border-left: 6px solid #009999;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        .slide-header-alt {
+            border-left: 6px solid #FFB81C;
+            padding-left: 20px;
+            margin-bottom: 30px;
+        }
+
+        h1 {
+            color: #003D5C;
+            font-size: 42px;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #009999;
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        h3 {
+            color: #003D5C;
+            font-size: 22px;
+            margin: 25px 0 15px 0;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 20px;
+            font-weight: 300;
+            margin-bottom: 10px;
+        }
+
+        .content-section {
+            margin: 20px 0;
+        }
+
+        .question {
+            font-size: 18px;
+            font-weight: 600;
+            color: #003D5C;
+            margin: 20px 0 10px 0;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin: 10px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #E6F7F7 0%, #CCF0F0 100%);
+            border-left: 4px solid #009999;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .warning-box {
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);
+            border-left: 4px solid #FFB81C;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #009999 0%, #006666 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            font-weight: 400;
+        }
+
+        .title-slide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            min-height: 600px;
+            background: linear-gradient(135deg, #00BCD4 0%, #006D7A 100%);
+            color: white;
+            border-radius: 10px;
+            padding: 60px;
+        }
+
+        .title-slide h1 {
+            color: white;
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .title-slide .subtitle {
+            color: #E0F7FA;
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .company-focus {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 40px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .company-focus h2 {
+            color: #FFB81C;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+
+        .company-focus p {
+            color: white;
+            font-size: 18px;
+        }
+
+        .visual-container {
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .visual-container img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #ddd;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 20px 0;
+        }
+
+        .column-content {
+            padding: 15px;
+        }
+
+        strong {
+            color: #009999;
+            font-weight: 600;
+        }
+
+        .metric-highlight {
+            font-size: 24px;
+            font-weight: 700;
+            color: #009999;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .slide {
+                margin: 0;
+                box-shadow: none;
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Slide 1: Title -->
+    <div class="slide">
+        <div class="title-slide">
+            <h1>Udacity Marketing Analytics</h1>
+            <p class="subtitle">Nanodegree Program<br>Project: Crafting an Analytic Brief</p>
+            <div class="company-focus">
+                <h2>Boston Dynamics - Spot Enterprise</h2>
+                <p>Energy & Utilities Division</p>
+            </div>
+            <p style="font-size: 16px; color: #E0F7FA; margin-top: 40px;">
+                By: Christopher O'Hara, PhD, EngD
+            </p>
+        </div>
+    </div>
+
+    <!-- Slide 2: Objective -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>Objective</h2>
+        </div>
+        <div class="highlight-box">
+            <p style="font-size: 20px; font-weight: 500;">
+                Increase Spot Enterprise deployments in the Energy & Utilities sector by <strong>30%</strong>
+                year-over-year, with a focus on expanding Orbit fleet management software adoption to
+                <strong>80%</strong> of Spot customers by end of Q4 2025.
+            </p>
+        </div>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-number">30%</div>
+                <div class="stat-label">Target Deployment Growth</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">80%</div>
+                <div class="stat-label">Orbit Software Adoption Target</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 3: Business Story -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>Business Story: Energy & Utilities Sector</h2>
+        </div>
+
+        <div class="question">What relevant actionable segments exist?</div>
+        <ul>
+            <li><strong>Electric Utilities</strong> - Substation inspection, transformer monitoring, transmission line surveys</li>
+            <li><strong>Oil & Gas</strong> - Refinery inspection, pipeline monitoring, hazardous environment data collection</li>
+            <li><strong>Renewable Energy</strong> - Solar farm inspection, wind turbine assessment, offshore platform monitoring</li>
+            <li><strong>Nuclear Power</strong> - Radiation surveys, containment inspection, worker safety enhancement</li>
+        </ul>
+
+        <div class="question" style="margin-top: 30px;">Which ones should we pursue and why?</div>
+        <div class="highlight-box">
+            <p><strong>Primary Target: Electric Utilities</strong></p>
+            <ul style="margin-top: 10px;">
+                <li>Proven ROI with existing customers (National Grid, Consumers Energy, Dominion Energy)</li>
+                <li>Regulatory pressure for grid modernization and predictive maintenance</li>
+                <li>Large addressable market: U.S. substation inspection market alone worth $260M+ (2023)</li>
+                <li>2-year or less ROI on acoustic leak detection (typical deployment)</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 4: Customer Story (Left Column) -->
+    <div class="slide">
+        <div class="slide-header-alt">
+            <h2>Customer Story</h2>
+        </div>
+
+        <div class="question">Where is our target audience?</div>
+        <ul>
+            <li>Asset management directors at electric utilities (500+ employees)</li>
+            <li>Operations technology (OT) managers responsible for grid infrastructure</li>
+            <li>Safety & compliance officers at energy companies</li>
+            <li>Geographic focus: North America (Orbit cloud availability), expanding to Europe</li>
+        </ul>
+
+        <div class="question">Where is our effort?</div>
+        <ul>
+            <li><strong>Industry Events</strong> - DistribuTECH, POWER-GEN, trade shows (awareness + interest)</li>
+            <li><strong>Direct Sales</strong> - Enterprise account teams targeting Fortune 500 energy companies</li>
+            <li><strong>Partner Network</strong> - System integrators (Siemens, IFS) for solution delivery</li>
+            <li><strong>Case Studies</strong> - Published success stories from National Grid, Dominion Energy</li>
+            <li><strong>Technical Webinars</strong> - ROI workshops, autonomous inspection demonstrations</li>
+        </ul>
+    </div>
+
+    <!-- Slide 5: Customer Story (Right Column) -->
+    <div class="slide">
+        <div class="slide-header-alt">
+            <h2>Customer Story (continued)</h2>
+        </div>
+
+        <div class="question">How effective is our effort?</div>
+        <div class="stat-grid">
+            <div class="stat-card">
+                <div class="stat-number">1,500+</div>
+                <div class="stat-label">Spot Robots Deployed Globally</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">1M+</div>
+                <div class="stat-label">Automated Data Captures (2023)</div>
+            </div>
+        </div>
+        <p style="margin-top: 20px;">Energy & utilities represents a growing segment with strong customer retention and expansion potential.</p>
+
+        <div class="question" style="margin-top: 25px;">Where should we focus changes?</div>
+        <div class="warning-box">
+            <ul>
+                <li>Increase <strong>Orbit software adoption</strong> - currently geo-limited (North America only)</li>
+                <li>Develop <strong>pilot-to-fleet conversion programs</strong> - standardize path from 1 robot → 5+ robots</li>
+                <li>Build <strong>vertical-specific use cases</strong> - substation inspection packages, refinery bundles</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 6: Customer Story (Action Plan) -->
+    <div class="slide">
+        <div class="slide-header-alt">
+            <h2>Customer Story (continued)</h2>
+        </div>
+
+        <div class="question">What should we do, now or later?</div>
+
+        <div class="highlight-box">
+            <h3 style="color: #009999; margin-top: 0;">Now (Q1 2025)</h3>
+            <ul>
+                <li>Launch <strong>"Utility ROI Calculator"</strong> on website for lead generation</li>
+                <li>Expand Orbit cloud to <strong>Europe</strong> (currently North America only)</li>
+                <li>Create <strong>substation inspection starter package</strong> at $95K all-in</li>
+                <li>Develop <strong>LinkedIn Thought Leadership campaign</strong> targeting OT managers</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <h3 style="color: #003D5C; margin-top: 0;">Later (Q2-Q4 2025)</h3>
+            <ul>
+                <li>Build <strong>partner certification program</strong> for system integrators</li>
+                <li>Develop <strong>Spot-as-a-Service</strong> leasing model for mid-market utilities</li>
+                <li>Launch <strong>predictive maintenance AI module</strong> for Orbit software</li>
+                <li>Create <strong>customer success community</strong> for peer learning</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 7: Testing and Learning Plan -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>Testing and Learning Plan</h2>
+        </div>
+
+        <div class="question">What should we study further?</div>
+        <ul>
+            <li><strong>Pilot-to-Fleet Conversion Rate</strong> - Analyze what drives customers from 1 robot to fleet deployment</li>
+            <li><strong>Orbit Adoption Barriers</strong> - Survey non-Orbit customers to understand software resistance</li>
+            <li><strong>Competitive Win/Loss Analysis</strong> - Why do prospects choose Spot vs. ANYbotics, Unitree, or manual inspection?</li>
+            <li><strong>Channel Effectiveness</strong> - Which touchpoints (webinars, demos, case studies) drive pipeline velocity?</li>
+        </ul>
+
+        <div class="question" style="margin-top: 25px;">What should we try?</div>
+        <div class="highlight-box">
+            <ul>
+                <li><strong>A/B test ROI messaging</strong> - "2-year payback" vs. "40% cost reduction" on demo request landing pages</li>
+                <li><strong>Partner co-marketing pilot</strong> - Joint webinar with Siemens targeting their existing energy customers</li>
+                <li><strong>Free Orbit trial</strong> - 90-day Orbit software trial for new Spot customers</li>
+                <li><strong>Industry micro-events</strong> - Host intimate 20-person utility roundtables vs. large trade show booths</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 8: Testing and Learning Plan (Data Needs) -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>Testing and Learning Plan (continued)</h2>
+        </div>
+
+        <div class="question">What analysis and data do we need?</div>
+
+        <div class="content-section">
+            <h3>Current Data Gaps</h3>
+            <div class="warning-box">
+                <ul>
+                    <li><strong>Orbit Adoption Rate</strong> - What % of Spot customers use Orbit fleet management?</li>
+                    <li><strong>Average Fleet Size</strong> - How many Spots do customers typically deploy after initial purchase?</li>
+                    <li><strong>Sales Cycle Duration</strong> - Average time from first demo to signed contract</li>
+                    <li><strong>Customer Lifetime Value (CLV)</strong> - Total revenue per customer including hardware, software, services</li>
+                    <li><strong>Lead Source Attribution</strong> - Which channels drive highest-value opportunities?</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="content-section">
+            <h3>Recommended Data Collection</h3>
+            <div class="highlight-box">
+                <ul>
+                    <li><strong>CRM Enhancement</strong> - Tag all opportunities by vertical sector, use case, and initial contact source</li>
+                    <li><strong>Orbit Telemetry</strong> - Track feature usage, mission frequency, multi-robot coordination</li>
+                    <li><strong>Win/Loss Interviews</strong> - Conduct structured interviews within 30 days of decision</li>
+                    <li><strong>Website Analytics</strong> - Implement UTM tracking for all campaign traffic; measure demo request conversion by source</li>
+                    <li><strong>Post-Purchase Surveys</strong> - 90-day and 1-year customer satisfaction + expansion intent surveys</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Slide 9: Purchase Process Funnel -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>Purchase Process</h2>
+        </div>
+        <div class="visual-container">
+            <img src="purchase_funnel.png" alt="Purchase Process Funnel showing customer journey through B2B enterprise channels">
+        </div>
+        <p style="text-align: center; margin-top: 15px; font-size: 14px; color: #666;">
+            <strong>B2B Enterprise Purchase Funnel:</strong> Awareness → Interest → Consideration → Decision → Post-Purchase
+        </p>
+    </div>
+
+    <!-- Slide 10: Most Important Metrics -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>Most Important Metrics - Purchase Process</h2>
+        </div>
+
+        <div class="content-section">
+            <h3>1. Awareness</h3>
+            <ul>
+                <li><strong>Industry Events:</strong> Booth visits, badge scans, demo queue length</li>
+                <li><strong>Website/SEO:</strong> Organic traffic to energy sector use case pages, time on page</li>
+                <li><strong>LinkedIn (B2B):</strong> Impressions, engagement rate on thought leadership posts</li>
+                <li><strong>Trade Publications:</strong> PR mentions, article views, CTR on sponsored content</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>2. Interest</h3>
+            <ul>
+                <li><strong>Webinars:</strong> Registration rate, attendance rate, post-webinar demo requests</li>
+                <li><strong>Case Studies:</strong> Downloads, time spent reading, CTA clicks</li>
+                <li><strong>Demo Requests:</strong> Form submissions, qualification rate, demo-to-meeting conversion</li>
+                <li><strong>Email Campaigns:</strong> Open rate, click-through rate, content engagement score</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>3. Consideration</h3>
+            <ul>
+                <li><strong>Partner Network:</strong> Joint opportunities created, partner-sourced pipeline value</li>
+                <li><strong>Direct Sales:</strong> Discovery meetings held, technical deep-dives completed, stakeholder mapping</li>
+                <li><strong>Demo Requests:</strong> On-site demos delivered, robot trial programs initiated</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 11: Most Important Metrics (continued) -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>Most Important Metrics - Purchase Process (continued)</h2>
+        </div>
+
+        <div class="content-section">
+            <h3>4. Decision</h3>
+            <ul>
+                <li><strong>Pilot Program:</strong> Pilot proposals submitted, pilot success rate (moved to production)</li>
+                <li><strong>Direct Sales:</strong> Proposals sent, contract value, negotiation duration</li>
+                <li><strong>Demo Requests:</strong> Post-demo follow-up engagement, technical questions resolved</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>5. Post-Purchase</h3>
+            <ul>
+                <li><strong>Pilot Program:</strong> Pilot-to-fleet conversion rate, fleet expansion timeline</li>
+                <li><strong>Orbit Software:</strong> Software activation rate, daily active missions, multi-robot deployments</li>
+                <li><strong>Customer Success:</strong> NPS score, customer health score, support ticket volume</li>
+                <li><strong>Expansion:</strong> Upsell opportunities (additional robots, sensors, software modules), renewal rate</li>
+            </ul>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>North Star Metrics:</strong></p>
+            <ul style="margin-top: 10px;">
+                <li><span class="metric-highlight">Pipeline Velocity</span> - Days in each funnel stage</li>
+                <li><span class="metric-highlight">Demo-to-Close Rate</span> - % of demos that become customers</li>
+                <li><span class="metric-highlight">Fleet Expansion Rate</span> - Average robots added per customer annually</li>
+                <li><span class="metric-highlight">Orbit Attach Rate</span> - % of Spot sales including Orbit software</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 12: Market Context -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>Market Opportunity</h2>
+        </div>
+
+        <div class="content-section">
+            <h3>Inspection Robotics Market Growth</h3>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$1.8B</div>
+                    <div class="stat-label">2024 Market Size</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$10.1B</div>
+                    <div class="stat-label">2032 Projected Market</div>
+                </div>
+            </div>
+            <p style="text-align: center; margin-top: 15px; font-weight: 600; color: #009999;">
+                24.12% CAGR (2025-2032)
+            </p>
+        </div>
+
+        <div class="content-section">
+            <h3>Energy Sector Specifics</h3>
+            <div class="two-column">
+                <div class="column-content">
+                    <h3 style="font-size: 18px; color: #003D5C;">Power Inspection Robots</h3>
+                    <p style="margin-top: 10px;"><strong>$1.2B</strong> (2024) → <strong>$3.5B</strong> (2033)</p>
+                    <p>CAGR: 15.5%</p>
+                </div>
+                <div class="column-content">
+                    <h3 style="font-size: 18px; color: #003D5C;">U.S. Substation Inspection</h3>
+                    <p style="margin-top: 10px;"><strong>$260M</strong> (2023) → <strong>$814M</strong> (2032)</p>
+                    <p>CAGR: 13.5%</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="highlight-box">
+            <p><strong>Key Insight:</strong> Utility sector is the fastest-growing segment in inspection and maintenance robotics, driven by grid modernization mandates and aging infrastructure replacement needs.</p>
+        </div>
+    </div>
+
+    <!-- Slide 13: Competitive Positioning -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>Boston Dynamics Competitive Advantages</h2>
+        </div>
+
+        <div class="content-section">
+            <h3>Proven Track Record</h3>
+            <ul>
+                <li><strong>1,500+ robots deployed</strong> globally across diverse environments</li>
+                <li><strong>1M+ autonomous data captures</strong> in 2023 demonstrating reliability</li>
+                <li><strong>Tier 1 customer references</strong> - National Grid, Dominion Energy, Consumers Energy</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>Technology Leadership</h3>
+            <ul>
+                <li><strong>Advanced mobility</strong> - Stairs, rough terrain, confined spaces that fixed systems can't access</li>
+                <li><strong>Orbit fleet management</strong> - Centralized multi-robot coordination and data aggregation</li>
+                <li><strong>Sensor flexibility</strong> - Thermal, acoustic, visual, radiation - modular payload system</li>
+                <li><strong>Autonomous operation</strong> - Pre-programmed missions reduce operator training burden</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>Enterprise Ecosystem</h3>
+            <ul>
+                <li><strong>Strategic partnerships</strong> - IFS, Siemens, Anthropic (agentic AI integration)</li>
+                <li><strong>System integrator network</strong> - Turnkey deployment through certified partners</li>
+                <li><strong>Proven ROI</strong> - Typical 2-year payback on acoustic leak detection</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 14: Summary & Next Steps -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>Summary & Immediate Next Steps</h2>
+        </div>
+
+        <div class="highlight-box">
+            <h3 style="color: #009999; margin-top: 0;">Strategic Priorities</h3>
+            <ul>
+                <li><strong>Expand Orbit Adoption:</strong> Make fleet management software the default choice for new Spot customers</li>
+                <li><strong>Accelerate Pilot-to-Fleet:</strong> Reduce time from initial robot to multi-robot deployment</li>
+                <li><strong>Verticalize Go-to-Market:</strong> Build industry-specific packages (substation, refinery, wind farm)</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>Q1 2025 Action Items</h3>
+            <ul>
+                <li>✅ Launch Utility ROI Calculator landing page</li>
+                <li>✅ Expand Orbit cloud availability to Europe</li>
+                <li>✅ Create $95K "Substation Inspection Starter Pack"</li>
+                <li>✅ Implement CRM enhancements for better pipeline attribution</li>
+                <li>✅ Initiate win/loss interview program</li>
+                <li>✅ Develop LinkedIn thought leadership campaign (OT managers)</li>
+            </ul>
+        </div>
+
+        <div class="warning-box">
+            <p><strong>Success Metrics (12-month):</strong></p>
+            <ul style="margin-top: 10px;">
+                <li>30% increase in Energy & Utilities deployments</li>
+                <li>80% Orbit attach rate on new Spot sales</li>
+                <li>25% improvement in demo-to-close conversion</li>
+                <li>15% reduction in average sales cycle duration</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Slide 15: References -->
+    <div class="slide">
+        <div class="slide-header">
+            <h2>References</h2>
+        </div>
+
+        <div style="font-size: 11px; line-height: 1.4; column-count: 2; column-gap: 25px;">
+            <h3 style="font-size: 14px; margin-top: 0; color: #009999;">Boston Dynamics Official Sources</h3>
+            <p style="margin: 8px 0;"><strong>Energy & Natural Resources Industry Page</strong><br>
+            <a href="https://bostondynamics.com/industry/energy-natural-resources/" style="color: #009999; font-size: 10px;">bostondynamics.com/industry/energy-natural-resources/</a></p>
+
+            <p style="margin: 8px 0;"><strong>2023 Year in Review</strong><br>
+            <a href="https://bostondynamics.com/blog/a-million-milestones-2023-in-review/" style="color: #009999; font-size: 10px;">bostondynamics.com/blog/a-million-milestones-2023-in-review/</a></p>
+
+            <p style="margin: 8px 0;"><strong>Spot Product Page</strong><br>
+            <a href="https://bostondynamics.com/products/spot/" style="color: #009999; font-size: 10px;">bostondynamics.com/products/spot/</a></p>
+
+            <p style="margin: 8px 0;"><strong>Orbit Fleet Management</strong><br>
+            <a href="https://bostondynamics.com/products/orbit/" style="color: #009999; font-size: 10px;">bostondynamics.com/products/orbit/</a></p>
+
+            <h3 style="font-size: 14px; margin-top: 15px; color: #009999;">Market Research</h3>
+            <p style="margin: 8px 0;"><strong>Inspection Robots Market (2024-2032)</strong><br>
+            Maximize Market Research<br>
+            <span style="font-size: 10px;">$1.8B → $10.1B, CAGR 24.12%</span></p>
+
+            <p style="margin: 8px 0;"><strong>Power Inspection Robot Market</strong><br>
+            Verified Market Reports<br>
+            <span style="font-size: 10px;">$1.2B → $3.5B, CAGR 15.5%</span></p>
+
+            <p style="margin: 8px 0;"><strong>U.S. Substation Inspection Market</strong><br>
+            Verified Market Reports<br>
+            <span style="font-size: 10px;">$260M → $814M, CAGR 13.5%</span></p>
+
+            <p style="margin: 8px 0;"><strong>Power Grid Inspection Market</strong><br>
+            WiseGuy Reports<br>
+            <span style="font-size: 10px;">$8.14B → $23.5B, CAGR 14.16%</span></p>
+
+            <h3 style="font-size: 14px; margin-top: 15px; color: #009999;">Customer Deployments</h3>
+            <p style="margin: 8px 0;"><strong>National Grid</strong> - Electric substations, asset management</p>
+            <p style="margin: 8px 0;"><strong>Consumers Energy</strong> - Thermal scans, ML algorithms (Michigan utility)</p>
+            <p style="margin: 8px 0;"><strong>Dominion Energy</strong> - Radiation surveys, worker safety (2022 pilot)</p>
+            <p style="margin: 8px 0;"><strong>Eversource Energy</strong> - Grid operations AI integration (IFS partnership)</p>
+
+            <h3 style="font-size: 14px; margin-top: 15px; color: #009999;">Industry Publications</h3>
+            <p style="margin: 8px 0;"><strong>Robotics 24/7</strong> - Orbit announcements, product updates</p>
+            <p style="margin: 8px 0;"><strong>IEEE Spectrum</strong> - Technical specifications, commercial launch</p>
+            <p style="margin: 8px 0;"><strong>CNBC</strong> - Commercialization strategy, pricing</p>
+            <p style="margin: 8px 0;"><strong>VentureBeat</strong> - Spot sales launch, pricing details</p>
+
+            <h3 style="font-size: 14px; margin-top: 15px; color: #009999;">Technology Partnerships</h3>
+            <p style="margin: 8px 0;"><strong>IFS</strong> - Agentic AI integration for autonomous field operations</p>
+            <p style="margin: 8px 0;"><strong>Siemens</strong> - Enterprise asset management solutions</p>
+            <p style="margin: 8px 0;"><strong>Anthropic</strong> - Industrial AI use cases</p>
+
+            <h3 style="font-size: 14px; margin-top: 15px; color: #009999;">Key Statistics</h3>
+            <p style="margin: 8px 0;">• 1,500+ Spot robots deployed globally</p>
+            <p style="margin: 8px 0;">• 1,000,000+ automated data captures (2023)</p>
+            <p style="margin: 8px 0;">• $75,000 base price (Explorer Kit)</p>
+            <p style="margin: 8px 0;">• 2-year or less ROI (acoustic leak detection)</p>
+            <p style="margin: 8px 0;">• 150 Early Adopter Program units (2020)</p>
+        </div>
+
+        <p style="margin-top: 20px; font-size: 10px; text-align: center; color: #666; border-top: 1px solid #ddd; padding-top: 15px;">
+            All data verified as of November 2025 | Project by Christopher O'Hara, PhD, EngD
+        </p>
+    </div>
+
+</body>
+</html>
